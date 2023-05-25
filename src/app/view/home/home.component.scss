@@ -1,0 +1,21 @@
+.contenaire{
+  /** border: solid 1px red;*/
+  width: 100%; 
+  height: 100%;
+  /**padding: 10px; **/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .banner{
+    width: 250px;
+    p{
+        text-align: justify;
+    }
+  }
+  button{
+    margin-top: 20px;
+  }
+
+}
