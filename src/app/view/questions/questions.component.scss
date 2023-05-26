@@ -1,9 +1,18 @@
 .container {
-  border: solid 1px red;
   display: flex;
   justify-content: center;
 
-  .container {
-    border: solid 1px red;
+
+  .containt{
+    width: 400px;
+   
+
+    .question-container{
+      width: 100%;
+      
+    }
+    mat-form-field{
+      width: 100%;
+    }
   }
 }

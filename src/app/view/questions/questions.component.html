@@ -1,13 +1,36 @@
 <app-header></app-header>
 <div class="container">
   <div class="containt">
-    <div class="question-container">
-      <h4>Question 1</h4>
-      <p></p>
-    </div>
+    <form action="">
+      <div class="question-container">
+        <h4>Question 1</h4>
+        <p> Quel est votre domaine d'études?</p>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Ex. Medecine" value="">
+        </mat-form-field>
+      </div>
+      <div class="question-container">
+        <h4>Question 2</h4>
+        <p> Quel est votre statut?</p>
+        <mat-form-field appearance="fill" >
+          <mat-select [value]="'Elève'">
+            <mat-option >Elève</mat-option>
+            <mat-option >Etudiant</mat-option>
+            <mat-option >Employé</mat-option>
+            <mat-option >Autres</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="question-container">
+        <h4>Question 1</h4>
+        <p> Quel est votre domaine d'études?</p>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Ex. Medecine" value="">
+        </mat-form-field>
+      </div>
+    </form>
+   
 
-    <h4>Question 1</h4>
-    <h4>Question 1</h4>
-    <h4>Question 1</h4>
+    
   </div>
 </div>
