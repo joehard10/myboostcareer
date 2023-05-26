@@ -1,12 +1,10 @@
 <app-header></app-header>
 <div class="contenaire">
-    <img src="../../../assets/image.png" alt="">
+    <img src="../../../assets/logo.png" alt="">
     <div class="banner">
-        <p>Explorez nos profils
-            professionnels, découvrez les
-            écoles et formations adaptées,
-            et trouvez les offres d'emploi
-            qui vous correspondent. </p>
+        <p>Explorez nos profils professionnels, découvrez les écoles et formations adaptées, et trouvez les offres d'emploi qui vous correspondent. </p>
+        <p>Nous allons vous poser une série de questions pour vous aider à découvrir votre profil professionnel. </p>
+        <app-spinner></app-spinner>
     </div>
-    <button mat-raised-button color="primary">Commencer</button>
+    <button mat-raised-button color="primary" [routerLink]="'questions'">Commencer</button>
 </div>

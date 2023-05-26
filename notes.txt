@@ -1,0 +1,103 @@
+echo "# myboostcareer" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:joehard10/myboostcareer.git
+git push -u origin main
+
+
+
+AWS:
+----
+Creation d'une instance EC2
+  Creation de la cle
+
+Connexion en utilisant la connexion ssh
+  Le fichier de cle telecharge change de mode avec
+  chmod 400 <non-fichier-cle>
+
+
+Sur le terminal:
+----------------
+sudo yum update
+sudo yum upgrade
+
+
+APACHE:
+-------
+Installez le serveur web Apache
+sudo yum install httpd
+
+démarrez le service Apache
+sudo systemctl start httpd
+
+autoriser le démarrage automatique du service Apache au démarrage de l'instance
+sudo systemctl enable httpd
+
+Par défaut, le service Apache écoute sur le port 80.
+Vous devriez maintenant pouvoir accéder à votre instance EC2 via HTTP en utilisant l'adresse IP publique de l'instance.
+Si vous souhaitez activer la connexion HTTPS, vous devez générer un certificat SSL valide pour votre domaine. Vous pouvez utiliser des services tels que Let's Encrypt ou AWS Certificate Manager pour obtenir un certificat SSL gratuit ou payant.
+
+Une fois que vous avez obtenu votre certificat SSL, vous devrez le configurer avec Apache.
+
+Voici les étapes de base :
+
+Installez le module SSL d'Apache en exécutant la commande suivante :
+sudo yum install mod_ssl
+
+
+Configurez Apache pour utiliser votre certificat SSL en éditant le fichier de configuration SSL. Exécutez la commande suivante pour ouvrir le fichier de configuration en utilisant l'éditeur de texte Vim :
+sudo vim /etc/httpd/conf.d/ssl.conf
+
+Dans le fichier de configuration, recherchez les directives
+SSLCertificateFile et SSLCertificateKeyFile.
+Remplacez les chemins par le chemin de votre certificat SSL et de votre clé privée respectivement.
+
+Enregistrez les modifications et quittez l'éditeur de texte.
+
+Redémarrez le service Apache pour appliquer les modifications :
+sudo systemctl restart httpd
+
+
+Maintenant, vous devriez pouvoir accéder à votre application Node.js via les connexions HTTP et HTTPS en utilisant l'adresse IP publique de votre instance EC2.
+Assurez-vous que votre application Node.js est configurée pour écouter le port approprié (par défaut, le port 3000).
+Vous devrez peut-être également configurer les règles de pare-feu pour autoriser le trafic entrant sur les ports HTTP (80) et HTTPS (443) dans le groupe de sécurité associé à votre instance EC2.
+
+
+NGINX:
+Installez Nginx:
+sudo yum install nginx
+
+Vérifiez que Nginx est en cours d'exécution
+sudo systemctl status nginx
+
+Ouvrez le fichier de configuration Nginx par défaut
+sudo vim /etc/nginx/nginx.conf
+
+À l'intérieur du fichier de configuration, recherchez la section http et ajoutez une nouvelle directive server pour votre application Node.js.
+Par exemple, vous pouvez utiliser le bloc de configuration suivant:
+server {
+    listen 80;
+    server_name example.com;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+
+
+HEBERGEMENT SUR NETLIFY:
+
+
+DNS AVEC INFINITY
+sous domain cree sijit.rf.gb
+
+username: epiz_34291223
+mot de passe du compte: sijitInf1n1tyfr33

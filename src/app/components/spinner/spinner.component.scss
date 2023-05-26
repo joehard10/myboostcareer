@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  mat-spinner {
+    color: #4c80b0;
+  }
+
+}

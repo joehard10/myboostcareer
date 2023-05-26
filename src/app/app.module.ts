@@ -9,12 +9,22 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './view/home/home.component';
 import {MatButtonModule} from '@angular/material/button';
+import { QuestionsComponent } from './view/questions/questions.component';
+import { ProfilesComponent } from './view/profiles/profiles.component';
+import { OffresComponent } from './view/offres/offres.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    QuestionsComponent,
+    ProfilesComponent,
+    OffresComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +32,8 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
