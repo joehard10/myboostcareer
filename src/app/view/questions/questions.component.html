@@ -6,31 +6,33 @@
         <h4>Question 1</h4>
         <p> Quel est votre domaine d'études?</p>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Ex. Medecine" value="">
+          <input matInput placeholder="Ex. Medecine" value="" [(ngModel)]="question1" name="question1">
         </mat-form-field>
       </div>
       <div class="question-container">
         <h4>Question 2</h4>
-        <p> Quel est votre statut?</p>
-        <mat-form-field appearance="fill" >
-          <mat-select [value]="'Elève'">
-            <mat-option >Elève</mat-option>
-            <mat-option >Etudiant</mat-option>
-            <mat-option >Employé</mat-option>
-            <mat-option >Autres</mat-option>
+        <p>Quel est votre statut?</p>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="question2" name="question2">
+            <mat-option *ngFor="let statut of statuts" [value]="statut.value" >
+              {{statut.viewValue}}
+            </mat-option>
           </mat-select>
         </mat-form-field>
+        
       </div>
       <div class="question-container">
-        <h4>Question 1</h4>
+        <h4>Question 3</h4>
         <p> Quel est votre domaine d'études?</p>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Ex. Medecine" value="">
+          <input matInput placeholder="Ex. Medecine" value="" [(ngModel)]="question3" name="question3">
         </mat-form-field>
       </div>
+      <button mat-raised-button color="primary" (click)="submitQuestion()">Envoyer</button>
     </form>
    
 
-    
+ 
+
   </div>
 </div>
