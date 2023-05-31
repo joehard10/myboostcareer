@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { QuestionsService } from './services/questions.service';
 
 interface statut{
   value: string,
@@ -24,10 +25,25 @@ export class QuestionsComponent {
 
 
   public submitQuestion(){
-    console.log(this.question1, this.question2, this.question3)
+    const liste =[ this.question1, this.question2, this.question3]
+
+    this.questionsService.submitQuestion(liste).subscribe({
+      next:resultat=>{
+
+        console.log("next: ",resultat)
+      },
+
+      error: erreur=> {
+
+        console.log ("error: ",erreur)
+      }
+      
+      
+    })
+
   }
 
+  constructor (private questionsService: QuestionsService){}
 
-
-
+  
 }

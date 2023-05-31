@@ -17,6 +17,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, NgForm } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -39,7 +40,9 @@ import { FormsModule, NgForm } from '@angular/forms';
     MatProgressSpinnerModule,
     MatInputModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+  
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
